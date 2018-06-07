@@ -1,7 +1,8 @@
 {
-  "name": "kurama",
+  "name": "kurama-ui",
   "version": "0.1.0",
   "private": true,
+  "author": "Camilo Guerrero",
   "devDependencies": {
     "react-native-scripts": "1.14.0",
     "jest-expo": "~27.0.0",
