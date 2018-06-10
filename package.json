@@ -51,7 +51,11 @@
     "preset": "jest-expo-ts",
     "setupFiles": [
       "<rootDir>/jest/setup.js"
-    ]
+    ],
+    "collectCoverage": true
+
+
+
   },
   "dependencies": {
     "expo": "^27.0.1",
