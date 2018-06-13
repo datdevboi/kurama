@@ -24,6 +24,7 @@
     "react-native-mock": "^0.3.1",
     "react-native-scripts": "1.14.0",
     "react-native-storybook-loader": "^1.8.0",
+    "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.3.1",
     "typescript": "^2.9.1"
   },
@@ -53,9 +54,6 @@
       "<rootDir>/jest/setup.js"
     ],
     "collectCoverage": true
-
-
-
   },
   "dependencies": {
     "expo": "^27.0.1",
