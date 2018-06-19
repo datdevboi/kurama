@@ -26,6 +26,8 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.3.1",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -37,7 +39,7 @@
     "test": "jest",
     "load:stories": "./node_modules/.bin/rnstl",
     "prestorybook": "yarn load:stories",
-    "storybook": "storybook start -p 7007"
+    "storybook": "storybook start -p 7007 --host 127.0.1.1"
   },
   "config": {
     "react-native-storybook-loader": {
@@ -56,8 +58,10 @@
     "collectCoverage": true
   },
   "dependencies": {
+    "concurrently": "^3.5.1",
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "url": "^0.11.0"
   }
 }
