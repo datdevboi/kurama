@@ -39,7 +39,7 @@
     "test": "jest",
     "load:stories": "./node_modules/.bin/rnstl",
     "prestorybook": "yarn load:stories",
-    "storybook": "storybook start -p 7007 --host 127.0.1.1"
+    "storybook": "storybook start -p 7007 --host 192.168.0.114"
   },
   "config": {
     "react-native-storybook-loader": {

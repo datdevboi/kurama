@@ -9,7 +9,7 @@ configure(() => {loadStories()} , module);
 
 // This assumes that storybook is running on the same host as your RN packager,
 // to set manually use, e.g. host: 'localhost' option
-const StorybookUIRoot = getStorybookUI({ port: 7007, onDeviceUI: true });
+const StorybookUIRoot = getStorybookUI({ port: 7007, onDeviceUI: true, host: '192.168.0.114' });
 
 // react-native hot module loader must take in a Class - https://github.com/facebook/react-native/issues/10991
 // https://github.com/storybooks/storybook/issues/2081
