@@ -7,7 +7,7 @@ export interface IProps {
   /** prop1 description */
   onPress: () => null;
   /** prop2 description */
-  title: string;
+  title?: string;
 }
 
 export const Button = (props: IProps) => (
@@ -15,11 +15,3 @@ export const Button = (props: IProps) => (
     {props.children}
   </TouchableHighlight>
 );
-
-// Button.propTypes = {
-//   children: PropTypes.node.isRequired,
-//   onPress: PropTypes.func
-// };
-// Button.defaultProps = {
-//   onPress: () => {}
-// };
