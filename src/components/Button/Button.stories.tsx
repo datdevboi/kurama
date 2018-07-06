@@ -1,8 +1,8 @@
-import React from "react";
+import * as React from "react";
 import { Text } from "react-native";
 import { storiesOf } from "@storybook/react-native";
 import { action } from "@storybook/addon-actions";
-import {Button} from "./Button";
+import { Button } from "./Button";
 import CenterView from "../../utils/CenterView";
 
 storiesOf("Button", module)
