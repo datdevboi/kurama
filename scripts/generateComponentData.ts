@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import chalk from "chalk";
-import chokidar from "chokidar";
 import * as reactdcts from "react-docgen-typescript";
 import util from "util";
 
