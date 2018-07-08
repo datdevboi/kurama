@@ -1,4 +1,3 @@
-import * as React from "react";
-import StoryUI from "./storybook";
+import { App } from "./src/App";
 
-export default StoryUI;
+export default App;
