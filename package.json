@@ -13,6 +13,7 @@
     "@types/jest": "^23.0.0",
     "@types/react": "^16.3.17",
     "@types/react-native": "^0.55.17",
+    "@types/storybook__react-native": "^3.0.0",
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
@@ -53,7 +54,7 @@
         "./src/components"
       ],
       "pattern": "**/*.stories.tsx",
-      "outputFile": "./storybook/storyLoader.js"
+      "outputFile": "./storybook/storyLoader.tsx"
     }
   },
   "jest": {
