@@ -4,17 +4,11 @@
   "private": true,
   "author": "Camilo Guerrero",
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.6",
-    "@storybook/addon-info": "^3.4.8",
-    "@storybook/addon-links": "^3.4.6",
-    "@storybook/addons": "^3.4.6",
-    "@storybook/react-native": "^3.4.6",
     "@types/enzyme": "^3.1.10",
     "@types/jest": "^23.0.0",
     "@types/react": "^16.3.17",
     "@types/react-native": "^0.55.17",
     "@types/react-navigation": "^2.0.10",
-    "@types/storybook__react-native": "^3.0.0",
     "awesome-typescript-loader": "^5.2.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
@@ -24,11 +18,9 @@
     "jest-expo": "~27.0.0",
     "jest-expo-ts": "^22.0.1",
     "react-docgen-typescript": "^1.6.1",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.4.0",
     "react-native-mock": "^0.3.1",
     "react-native-scripts": "1.14.0",
-    "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.3.1",
     "ts-node": "^7.0.0",
@@ -43,20 +35,7 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "load:stories": "./node_modules/.bin/rnstl",
-    "gen:compdata": "ts-node-dev --respawn ./scripts/generateComponentData.ts",
-    "prestorybook": "yarn load:stories",
-    "storybook": "storybook start -p 7007 --host 192.168.0.114",
-    "dev": "concurrently \"yarn gen:compdata\" \"yarn storybook\""
-  },
-  "config": {
-    "react-native-storybook-loader": {
-      "searchDir": [
-        "./src/components"
-      ],
-      "pattern": "**/*.stories.tsx",
-      "outputFile": "./storybook/storyLoader.tsx"
-    }
+    "gen:compdata": "ts-node-dev --respawn ./scripts/generateComponentData.ts"
   },
   "jest": {
     "preset": "jest-expo-ts",
@@ -72,7 +51,6 @@
     "react": "16.3.1",
     "react-native": "~0.55.2",
     "react-navigation": "^2.6.2",
-    "ts-node-dev": "^1.0.0-pre.26",
-    "url": "^0.11.0"
+    "ts-node-dev": "^1.0.0-pre.26"
   }
 }
