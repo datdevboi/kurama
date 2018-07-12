@@ -4,6 +4,8 @@ import { createDrawerNavigator, DrawerItems } from "react-navigation";
 import { Container, Content, Icon, Header, Body, Title } from "native-base";
 import { Home } from "./screens/Home";
 import { CardExample } from "./screens/CardExample";
+import { DeckExample } from "./screens/DeckExample";
+import { ButtonExample } from "./screens/ButtonExample";
 
 const CustomDrawerContentComponent = (props: any) => (
   <Container>
@@ -37,10 +39,16 @@ export const App = createDrawerNavigator(
     },
     Card: {
       screen: CardExample
+    },
+    // Deck: {
+    //   screen: DeckExample
+    // },
+    Button: {
+      screen: ButtonExample
     }
   },
   {
-    initialRouteName: "Card",
+    initialRouteName: "Button",
     drawerPosition: "left",
     contentComponent: CustomDrawerContentComponent
   }
