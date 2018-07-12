@@ -13,7 +13,7 @@ export class ButtonExample extends Component<any> {
           drawerOpen={() => this.props.navigation.openDrawer()}
           title={"Button"}
         />
-        <Button onPress={() => alert("pressed")} type={"Primary"}>
+        <Button onPress={() => alert("pressed")}>
           <Text>Hello</Text>
         </Button>
       </View>
