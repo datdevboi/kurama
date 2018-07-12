@@ -1,13 +1,12 @@
-import React from "react";
+import * as React from "react";
 
 import { TouchableHighlight } from "react-native";
 
 export interface IProps {
-  children: React.ReactNode;
+  children: React.ReactElement<any>;
   /** prop1 description */
-  onPress: () => null;
+  onPress: () => void;
   /** prop2 description */
-  title?: string;
 }
 
 export const Button = (props: IProps) => (
