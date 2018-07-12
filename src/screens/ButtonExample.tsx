@@ -3,8 +3,7 @@ import { Text, View } from "react-native";
 import CustomHeader from "../CustomHeader";
 import { Button } from "../components/Button/Button";
 
-
-const {Component} = React;
+const { Component } = React;
 
 export class ButtonExample extends Component<any> {
   public render() {
@@ -14,7 +13,7 @@ export class ButtonExample extends Component<any> {
           drawerOpen={() => this.props.navigation.openDrawer()}
           title={"Button"}
         />
-        <Button onPress={() => console.log("pressed")}>
+        <Button onPress={() => alert("pressed")} type={"Primary"}>
           <Text>Hello</Text>
         </Button>
       </View>
