@@ -1,6 +1,11 @@
 import * as React from "react";
 
-import { TouchableHighlight, Platform, TouchableOpacity } from "react-native";
+import {
+  TouchableHighlight,
+  Platform,
+  TouchableOpacity,
+  Text
+} from "react-native";
 import styled from "styled-components/native";
 import { render } from "enzyme";
 
@@ -17,13 +22,23 @@ const btnTypes = {
 };
 
 const btnSizes = {
-  sm: 75
+  small: {
+    height: 0,
+    width: 0
+  },
+  medium: {
+    height: 50,
+    width: 100
+  },
+  large: {
+    height: 0,
+    width: 0
+  }
 };
 
 export interface IProps {
-  children: React.ReactElement<any>;
   /** function when Button is pressed */
-  onPress: () => void;
+  onPress?: () => void;
   /** The type of Button */
   type?:
     | "Primary"
@@ -39,14 +54,14 @@ export interface IProps {
   full?: boolean;
   /** the opacity of the button once pressed */
   activeOpacity?: number;
+  /** Any styles that you want to apply to the button */
+  style?: any;
+  size: "small" | "medium" | "large";
 }
 
 const Btn = styled.TouchableOpacity<IProps>`
-  background-color: ${props => btnTypes[props.type]};
-  display: flex;
+  background-color: ${props => btnTypes[props.type || "Primary"]};
   padding-top: 15;
-  height: 150;
-  width: 150;
 
   ${props =>
     props.rounded &&
@@ -59,10 +74,24 @@ const Btn = styled.TouchableOpacity<IProps>`
     `
     flex: 1;
   `};
+
+  ${props =>
+    props.size &&
+    `
+    height: ${btnSizes[props.size].height};
+    width: ${btnSizes[props.size].width}
+  `};
 `;
 
-export const Button = (props: IProps) => {
-  const { children, ...otherProps } = props;
+export class Button extends React.Component<IProps> {
+  public static defaultProps: IProps = {
+    activeOpacity: 0.5,
+    type: "Primary",
+    size: "medium"
+  };
+  public render() {
+    const { children, ...otherProps } = this.props;
 
-  return <Btn {...otherProps}>{props.children}</Btn>;
-};
+    return <Btn {...otherProps}>{this.props.children}</Btn>;
+  }
+}
