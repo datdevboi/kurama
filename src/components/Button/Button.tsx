@@ -7,34 +7,9 @@ import {
   Text
 } from "react-native";
 import styled from "styled-components/native";
-import { render } from "enzyme";
+import { btnStyles } from "./btnStyles";
 
-const platform = Platform.OS;
-
-const btnTypes = {
-  Primary: platform === "ios" ? "#007aff" : "#3F51B5",
-  Info: "#62B1F6",
-  Success: "#5cb85c",
-  Danger: "#d9534f",
-  Warning: "#f0ad4e",
-  Dark: "#000",
-  Light: "#f4f4f4"
-};
-
-const btnSizes = {
-  small: {
-    height: 0,
-    width: 0
-  },
-  medium: {
-    height: 50,
-    width: 100
-  },
-  large: {
-    height: 0,
-    width: 0
-  }
-};
+const { btnTypes, btnSizes } = btnStyles;
 
 export interface IProps {
   /** function when Button is pressed */
@@ -61,11 +36,11 @@ export interface IProps {
 
 const Btn = styled.TouchableOpacity<IProps>`
   background-color: ${props => btnTypes[props.type || "Primary"]};
-  padding-top: 15;
-
-  ${props =>
-    props.rounded &&
-    `
+  padding-horizontal: 10;
+  padding-vertical: 10
+    ${props =>
+      props.rounded &&
+      `
     border-radius: 10;
   `};
 
@@ -92,6 +67,8 @@ export class Button extends React.Component<IProps> {
   public render() {
     const { children, ...otherProps } = this.props;
 
-    return <Btn {...otherProps}>{this.props.children}</Btn>;
+    if (Platform.OS === "ios") {
+      return <Btn {...otherProps}>{this.props.children}</Btn>;
+    }
   }
 }
