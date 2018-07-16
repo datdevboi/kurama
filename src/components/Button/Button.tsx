@@ -4,7 +4,8 @@ import {
   TouchableHighlight,
   Platform,
   TouchableOpacity,
-  Text
+  Text,
+  View
 } from "react-native";
 import styled from "styled-components/native";
 import { btnStyles } from "./btnStyles";
@@ -31,16 +32,15 @@ export interface IProps {
   activeOpacity?: number;
   /** Any styles that you want to apply to the button */
   style?: any;
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
 }
 
 const Btn = styled.TouchableOpacity<IProps>`
   background-color: ${props => btnTypes[props.type || "Primary"]};
-  padding-horizontal: 10;
-  padding-vertical: 10
-    ${props =>
-      props.rounded &&
-      `
+
+  ${props =>
+    props.rounded &&
+    `
     border-radius: 10;
   `};
 
@@ -68,7 +68,20 @@ export class Button extends React.Component<IProps> {
     const { children, ...otherProps } = this.props;
 
     if (Platform.OS === "ios") {
-      return <Btn {...otherProps}>{this.props.children}</Btn>;
+      return (
+        <Btn {...otherProps}>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "space-around",
+              alignItems: "center",
+              flexDirection: "row"
+            }}
+          >
+            {this.props.children}
+          </View>
+        </Btn>
+      );
     }
   }
 }
