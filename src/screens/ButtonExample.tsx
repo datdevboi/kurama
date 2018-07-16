@@ -14,7 +14,7 @@ export class ButtonExample extends Component<any> {
           title={"Button"}
         />
         <Button onPress={() => alert("pressed")}>
-          <Text>Hello</Text>
+          <Text style={{ color: "white" }}>Hello</Text>
         </Button>
       </View>
     );
