@@ -24,8 +24,10 @@ function readFile(filePath: string) {
 function writeFile(filepath: string, content: any) {
   fs.writeFile(filepath, content, err => {
     err
-      ? console.log(chalk.red(err as any))
-      : console.log(chalk.green("Component data saved."));
+      ? // tslint:disable-next-line:no-console
+        console.log(chalk.red(err as any))
+      : // tslint:disable-next-line:no-console
+        console.log(chalk.green("Component data saved."));
   });
 }
 
@@ -44,18 +46,5 @@ function generate(paths: any) {
       util.inspect(componentData, { depth: null })
   );
 }
-
-// const enableWatchMode = (process.argv.slice(2) as any === "--watch");
-// if (enableWatchMode) {
-//   // Regenerate component metadata when components or examples change.
-//   chokidar
-//     .watch(paths.components])
-//     .on("change", (event: any, pathss: string) => {
-//       generate(pathss);
-//     });
-// } else {
-//   // Generate component metadata
-//   generate(paths);
-// }
 
 generate(paths);
