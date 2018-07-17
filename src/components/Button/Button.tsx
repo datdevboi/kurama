@@ -52,8 +52,6 @@ const Btn = styled.TouchableOpacity<IProps>`
 const TNFBtn = styled.View<IProps>`
   background-color: ${props => btnTypes[props.type || "Primary"]};
 
-  border-radius: 4;
-
   ${props =>
     props.full &&
     `
@@ -64,7 +62,12 @@ const TNFBtn = styled.View<IProps>`
     props.size &&
     `
   height: ${btnSizes[props.size].height};
-  width: ${btnSizes[props.size].width}
+  width: ${btnSizes[props.size].width};
+  elevation: 4;
+
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row
 `};
 `;
 
@@ -99,9 +102,9 @@ export class Button extends React.Component<IProps> {
         onPress={onPress}
         background={TouchableNativeFeedback.Ripple("lightblue")}
       >
-        <View style={{ backgroundColor: "blue", height: 150, width: 150 }}>
+        <TNFBtn size={size} type={type} full={full}>
           {children}
-        </View>
+        </TNFBtn>
       </TouchableNativeFeedback>
     );
   }
