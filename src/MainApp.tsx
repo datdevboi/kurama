@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export const App = createDrawerNavigator(
+export const MainApp = createDrawerNavigator(
   {
     Home: {
       screen: Home
