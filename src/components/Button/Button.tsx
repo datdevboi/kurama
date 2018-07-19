@@ -5,16 +5,6 @@ import styled from "styled-components/native";
 
 import { btnSizes, btnTypes } from "./btnStyles";
 
-// enum BtnType {
-//   Primary = "Primary",
-//   Info = "Info",
-//   Success = "Success",
-//   Danger = "Danger",
-//   Warning = "Warning",
-//   Dark = "Dark",
-//   Light = "Light"
-// }
-
 export interface IProps {
   /** function when Button is pressed */
   onPress?: () => void;
