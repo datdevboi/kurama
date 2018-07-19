@@ -2,9 +2,18 @@ import * as React from "react";
 
 import { Platform, View, TouchableNativeFeedback } from "react-native";
 import styled from "styled-components/native";
-import { btnStyles } from "./btnStyles";
 
-const { btnTypes, btnSizes } = btnStyles;
+import { btnSizes, btnTypes } from "./btnStyles";
+
+// enum BtnType {
+//   Primary = "Primary",
+//   Info = "Info",
+//   Success = "Success",
+//   Danger = "Danger",
+//   Warning = "Warning",
+//   Dark = "Dark",
+//   Light = "Light"
+// }
 
 export interface IProps {
   /** function when Button is pressed */
@@ -50,7 +59,7 @@ const Btn = styled.TouchableOpacity<IProps>`
 
 // Android Button
 const TNFBtn = styled.View<IProps>`
-  background-color: ${props => btnTypes[props.type || "Primary"]};
+  background-color: ${props => btnTypes[props.type || "Primary"].regular};
 
   ${props =>
     props.full &&
@@ -100,7 +109,8 @@ export class Button extends React.Component<IProps> {
     return (
       <TouchableNativeFeedback
         onPress={onPress}
-        background={TouchableNativeFeedback.Ripple("lightblue")}
+        background={TouchableNativeFeedback.Ripple(btnTypes[type || "Primary"]
+          .light as string)}
       >
         <TNFBtn size={size} type={type} full={full}>
           {children}
