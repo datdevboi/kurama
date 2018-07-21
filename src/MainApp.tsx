@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, StatusBar, Platform } from "react-native";
 import { createDrawerNavigator, DrawerItems } from "react-navigation";
 import { Container, Content, Icon, Header, Body, Title } from "native-base";
 import { Home } from "./screens/Home";
@@ -8,7 +8,7 @@ import { DeckExample } from "./screens/DeckExample";
 import { ButtonExample } from "./screens/ButtonExample";
 
 const CustomDrawerContentComponent = (props: any) => (
-  <Container>
+  <Container style={styles.container}>
     <Header style={styles.drawerHeader}>
       <Body>
         <Title>Kurama-UI</Title>
@@ -23,11 +23,14 @@ const CustomDrawerContentComponent = (props: any) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    ...Platform.select({
+      android: {
+        marginTop: StatusBar.currentHeight
+      }
+    })
   },
   drawerHeader: {
-    height: 100,
+    height: 75,
     backgroundColor: "#9975B9"
   }
 });
