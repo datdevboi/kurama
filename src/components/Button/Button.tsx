@@ -29,7 +29,7 @@ export interface IProps {
 
 // IOS Button
 const Btn = styled.TouchableOpacity<IProps>`
-  background-color: ${props => btnTypes[props.type || "Primary"]};
+  background-color: ${props => btnTypes[props.type || "Primary"].regular};
 
   border-radius: 4;
 
@@ -64,10 +64,12 @@ const TNFBtn = styled.View<IProps>`
   width: ${btnSizes[props.size].width};
   elevation: 4;
 
+  
+`};
+
   justify-content: space-around;
   align-items: center;
-  flex-direction: row
-`};
+  flex-direction: row;
 `;
 
 export class Button extends React.Component<IProps> {
