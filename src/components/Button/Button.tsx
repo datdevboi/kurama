@@ -1,6 +1,11 @@
 import * as React from "react";
 
-import { Platform, View, TouchableNativeFeedback } from "react-native";
+import {
+  Platform,
+  View,
+  TouchableNativeFeedback,
+  ViewStyle
+} from "react-native";
 import styled from "styled-components/native";
 
 import { btnSizes, btnTypes } from "./btnStyles";
@@ -23,7 +28,7 @@ export interface IProps {
   /** the opacity of the button once pressed */
   activeOpacity?: number;
   /** Any styles that you want to apply to the button */
-  style?: any;
+  style?: ViewStyle;
   size?: "small" | "medium" | "large";
 }
 
@@ -79,11 +84,17 @@ export class Button extends React.Component<IProps> {
     size: "medium"
   };
   public render() {
-    const { children, size, type, onPress, full } = this.props;
+    const { children, size, type, onPress, full, style } = this.props;
 
     if (Platform.OS === "ios") {
       return (
-        <Btn size={size} type={type} onPress={onPress} full={full}>
+        <Btn
+          size={size}
+          type={type}
+          onPress={onPress}
+          full={full}
+          style={style}
+        >
           <View
             style={{
               flex: 1,
@@ -104,7 +115,7 @@ export class Button extends React.Component<IProps> {
         background={TouchableNativeFeedback.Ripple(btnTypes[type || "Primary"]
           .light as string)}
       >
-        <TNFBtn size={size} type={type} full={full}>
+        <TNFBtn size={size} type={type} full={full} style={style}>
           {children}
         </TNFBtn>
       </TouchableNativeFeedback>
