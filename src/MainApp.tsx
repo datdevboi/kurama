@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     })
   },
   drawerHeader: {
-    height: 75,
+    height: 55,
     backgroundColor: "#9975B9"
   }
 });
