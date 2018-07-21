@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Platform, StatusBar } from "react-native";
+import { StyleSheet, Platform, StatusBar } from "react-native";
 
 import { Header, Body, Title, Content, Left, Icon, Right } from "native-base";
 
