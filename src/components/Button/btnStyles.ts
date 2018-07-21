@@ -1,9 +1,11 @@
-import { Platform } from "react-native";
+import { Platform, Dimensions } from "react-native";
 import { lighten } from "polished";
 
 const platform = Platform.OS;
 
-export const lightenUp = lighten(0.2);
+const lightenUp = lighten(0.2);
+
+const DEVICE_WIDTH = Math.floor(Dimensions.get("window").width);
 
 interface IBtnTypes {
   [key: string]: {
@@ -21,16 +23,16 @@ interface IBtnSizes {
 
 export const btnSizes: IBtnSizes = {
   small: {
-    height: 0,
-    width: 0
+    height: 30,
+    width: DEVICE_WIDTH / 4
   },
   medium: {
-    height: 50,
-    width: 100
+    height: 55,
+    width: DEVICE_WIDTH / 3
   },
   large: {
-    height: 0,
-    width: 0
+    height: 60,
+    width: DEVICE_WIDTH / 2
   }
 };
 
