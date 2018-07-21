@@ -5,7 +5,7 @@ import { Container, Content, Icon, Header, Body, Title } from "native-base";
 import { Home } from "./screens/Home";
 import { CardExample } from "./screens/CardExample";
 import { DeckExample } from "./screens/DeckExample";
-import { ButtonExample } from "./screens/ButtonExample";
+import { ButtonScreen } from "./screens/ButtonScreen";
 
 const CustomDrawerContentComponent = (props: any) => (
   <Container style={styles.container}>
@@ -47,7 +47,7 @@ export const MainApp = createDrawerNavigator(
     //   screen: DeckExample
     // },
     Button: {
-      screen: ButtonExample
+      screen: ButtonScreen
     }
   },
   {
