@@ -35,7 +35,8 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "gen:compdata": "ts-node-dev --respawn ./scripts/generateComponentData.ts"
+    "gen:compdata": "ts-node-dev --respawn ./scripts/generateComponentData.ts",
+    "gen:exampledata": "ts-node-dev --respawn ./scripts/generateExampleData.ts"
   },
   "jest": {
     "preset": "jest-expo-ts",
