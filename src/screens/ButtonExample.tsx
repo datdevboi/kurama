@@ -32,6 +32,13 @@ export class ButtonExample extends React.Component<any> {
         <Button type="Warning" onPress={() => console.log("pressed")}>
           <Text style={{ color: "white" }}>Warning</Text>
         </Button>
+
+        <Button
+          onPress={() => console.log("pressed")}
+          style={{ backgroundColor: "#db7093" }}
+        >
+          <Text style={{ color: "white" }}>Custom</Text>
+        </Button>
       </View>
     );
   }
