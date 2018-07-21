@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import { Button } from "../../components/Button/Button";
 
 export class ButtonExample extends React.Component<any> {
+  public static displayName = "Small Buttons";
   public render() {
     return (
       <View style={{ flex: 1 }}>
