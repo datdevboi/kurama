@@ -2,8 +2,8 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { Button } from "../../components/Button/Button";
 
-export class ButtonExample extends React.Component<any> {
-  public static displayName = "Small Buttons";
+export class SmallButton extends React.Component<any> {
+  public static displayName = "Small";
   public render() {
     return (
       <View style={{ flex: 1 }}>
