@@ -6,7 +6,8 @@ import { Button } from "../components/Button/Button";
 interface IExampleProps {
   name: string;
   code: string;
-  path: string;
+  path?: string;
+  component: any;
 }
 
 interface IState {
@@ -21,6 +22,10 @@ export class Example extends React.Component<IExampleProps, IState> {
     };
   }
 
+  public async componentDidMount() {
+    // const Component = await import(this.props.path);
+  }
+
   private toggleCode = () => {
     this.setState(prevState => ({
       showCode: !prevState.showCode
@@ -28,12 +33,12 @@ export class Example extends React.Component<IExampleProps, IState> {
   };
 
   public render() {
-    const { name, path, code } = this.props;
-    const ExampleComponent = require(path);
+    const { name, path, code, component: Component } = this.props;
+
     return (
       <View>
         <Text>{name}</Text>
-        <ExampleComponent />
+        <Component />
 
         <Button onPress={this.toggleCode}>
           <Text>{this.state.showCode ? "Hide" : "Show"} Code</Text>
