@@ -16,9 +16,13 @@ const ButtonExamples: [
 export class ButtonScreen extends React.Component<any> {
   private renderExamples = () => {
     return ButtonExamples.map(
-      (example: { name: string; filePath: string; code: string }) => {
+      (
+        example: { name: string; filePath: string; code: string },
+        index: number
+      ) => {
         return (
           <Example
+            key={index}
             name={example.name}
             path={example.filePath}
             code={example.code}
