@@ -1,36 +1,21 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import CustomHeader from "../CustomHeader";
-import { Button } from "../components/Button/Button";
 import { componentData } from "../../config/componentData";
-import { CodeExample } from "../Docs/CodeExample";
 import { Example } from "../Docs/Example";
+import { SmallButton } from "../examples/Button/SmallButtons";
+import { IExample } from "../types/types";
+import { getComponentData } from "../utils/getComponentData";
+import { findExample } from "../utils/findExample";
 
-const ButtonExamples: [
-  {
-    name: string;
-    filePath: string;
-    code: string;
-  }
-] = componentData.filter(c => c.name === "Button")[0].examples;
+const ButtonData: any = getComponentData(componentData, "Button");
+const ButtonExamples = ButtonData.examples;
+
+const Examples = {
+  ["Small"]: { component: SmallButton, ...findExample(ButtonExamples, "Small") }
+};
+
 export class ButtonScreen extends React.Component<any> {
-  private renderExamples = () => {
-    return ButtonExamples.map(
-      (
-        example: { name: string; filePath: string; code: string },
-        index: number
-      ) => {
-        return (
-          <Example
-            key={index}
-            name={example.name}
-            path={example.filePath}
-            code={example.code}
-          />
-        );
-      }
-    );
-  };
   public render() {
     return (
       <View style={{ flex: 1 }}>
@@ -38,7 +23,7 @@ export class ButtonScreen extends React.Component<any> {
           drawerOpen={() => this.props.navigation.openDrawer()}
           title={"Button"}
         />
-        <View style={{ flex: 1 }}>{this.renderExamples()}</View>
+        <View style={{ flex: 1 }}>{}</View>
       </View>
     );
   }
