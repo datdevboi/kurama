@@ -71,7 +71,7 @@ function generate(paths: any) {
         // name: file.slice(0, -3),
         // description: info.description,
         name: info[0].displayName,
-        filePath,
+
         code: content
       };
     });
