@@ -2,8 +2,31 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import CustomHeader from "../CustomHeader";
 import { Button } from "../components/Button/Button";
+import { componentData } from "../../config/componentData";
+import { CodeExample } from "../Docs/CodeExample";
+import { Example } from "../Docs/Example";
 
+const ButtonExamples: [
+  {
+    name: string;
+    filePath: string;
+    code: string;
+  }
+] = componentData.filter(c => c.name === "Button")[0].examples;
 export class ButtonScreen extends React.Component<any> {
+  private renderExamples = () => {
+    return ButtonExamples.map(
+      (example: { name: string; filePath: string; code: string }) => {
+        return (
+          <Example
+            name={example.name}
+            path={example.filePath}
+            code={example.code}
+          />
+        );
+      }
+    );
+  };
   public render() {
     return (
       <View style={{ flex: 1 }}>
@@ -11,41 +34,7 @@ export class ButtonScreen extends React.Component<any> {
           drawerOpen={() => this.props.navigation.openDrawer()}
           title={"Button"}
         />
-        // medium
-        <Button type="Primary" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Primary</Text>
-        </Button>
-        <Button type="Info" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Info</Text>
-        </Button>
-        <Button type="Success" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Success</Text>
-        </Button>
-        <Button type="Danger" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Danger</Text>
-        </Button>
-        <Button type="Dark" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Dark</Text>
-        </Button>
-        <Button type="Warning" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Warning</Text>
-        </Button>
-        <Button
-          onPress={() => console.log("pressed")}
-          style={{ backgroundColor: "#db7093" }}
-        >
-          <Text style={{ color: "white" }}>Custom</Text>
-        </Button>
-        <Button
-          size="large"
-          type="Primary"
-          onPress={() => console.log("pressed")}
-        >
-          <Text style={{ color: "white" }}>Primary Large</Text>
-        </Button>
-        <Button size="large" type="Info" onPress={() => console.log("pressed")}>
-          <Text style={{ color: "white" }}>Large Info</Text>
-        </Button>
+        <View style={{ flex: 1 }}>{this.renderExamples()}</View>
       </View>
     );
   }
