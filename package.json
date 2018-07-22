@@ -52,6 +52,7 @@
     "polished": "^1.9.3",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+    "react-native-syntax-highlighter": "^2.0.0",
     "react-navigation": "^2.6.2",
     "styled-components": "^3.3.3",
     "ts-node-dev": "^1.0.0-pre.26"
