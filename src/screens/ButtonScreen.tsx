@@ -23,7 +23,15 @@ export class ButtonScreen extends React.Component<any> {
           drawerOpen={() => this.props.navigation.openDrawer()}
           title={"Button"}
         />
-        <View style={{ flex: 1 }}>{}</View>
+        <View style={{ flex: 1 }}>
+          {
+            <Example
+              name="Small"
+              component={Examples["Small"].component}
+              code={Examples["Small"].code}
+            />
+          }
+        </View>
       </View>
     );
   }
