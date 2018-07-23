@@ -36,15 +36,17 @@ export class Example extends React.Component<IExampleProps, IState> {
     const { name, path, code, component: Component } = this.props;
 
     return (
-      <View>
-        <Text>{name}</Text>
+      <View style={{ flexDirection: "column" }}>
+        <Text style={{ fontSize: 25, marginBottom: 10 }}>{name}</Text>
         <Component />
 
-        <Button onPress={this.toggleCode}>
-          <Text>{this.state.showCode ? "Hide" : "Show"} Code</Text>
-        </Button>
+        <View style={{ marginTop: 20 }}>
+          <Button onPress={this.toggleCode}>
+            <Text>{this.state.showCode ? "Hide" : "Show"} Code</Text>
+          </Button>
 
-        {this.state.showCode && <CodeExample code={code} />}
+          {this.state.showCode && <CodeExample code={code} />}
+        </View>
       </View>
     );
   }
