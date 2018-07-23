@@ -6,7 +6,7 @@ export class SmallButton extends React.Component<any> {
   public static displayName = "Small";
   public render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View>
         // medium
         <Button type="Primary" onPress={() => console.log("pressed")}>
           <Text style={{ color: "white" }}>Primary</Text>
