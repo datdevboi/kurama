@@ -22,3 +22,6 @@ yarn-error.log*
 /storybook/storyLoader.js
 /config/componentData.ts
 /config/examplesData.ts
+
+# build
+/build
