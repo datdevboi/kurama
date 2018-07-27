@@ -1,21 +1,33 @@
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Font } from "expo";
+import { MainApp } from "./src/MainApp";
+import { View, Text } from "react-native";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello</Text>
-      </View>
-    );
+class App extends React.Component<any> {
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      loading: true
+    };
+  }
+  public async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
+
+    this.setState({ loading: false });
+  }
+  public render() {
+    if (this.state.loading) {
+      return (
+        <View>
+          <Text>Loading.....</Text>
+        </View>
+      );
+    }
+    return <MainApp />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+export default App;
