@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "author": "Camilo Guerrero",
+  "workspaces": [
+    "packages/*"
+  ],
+  "nohoist": [
+    "**/rimraf",
+    "**/rimraf/**",
+    "**/react-native",
+    "**/react-native/**",
+    "**/expo",
+    "**/expo/**",
+    "**/react-native-typescript-transformer",
+    "**/react-native-typescript-transformer/**",
+    "**/metro-bundler-config-yarn-workspaces",
+    "**/metro-bundler-config-yarn-workspaces/**"
+  ],
   "devDependencies": {
     "@types/enzyme": "^3.1.10",
     "@types/jest": "^23.0.0",
