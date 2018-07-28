@@ -8,7 +8,8 @@
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz",
     "native-base": "^2.7.0",
-    "react-navigation": "^2.6.2"
+    "react-navigation": "^2.6.2",
+    "kurama-ui": "0.1.0"
   },
   "devDependencies": {
     "@types/expo": "^27.0.0",
