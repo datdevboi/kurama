@@ -1,5 +1,5 @@
 {
-  "name": "@kurama/kurama-ui",
+  "name": "kurama-ui",
   "version": "0.1.0",
   "main": "lib/index.js",
   "license": "MIT",
