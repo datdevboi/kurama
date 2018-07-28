@@ -1,47 +1,22 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "nohoist": [
-    "**/rimraf",
-    "**/rimraf/**",
-    "**/react-native",
-    "**/react-native/**",
-    "**/expo",
-    "**/expo/**",
-    "**/react-native-typescript-transformer",
-    "**/react-native-typescript-transformer/**",
-    "**/metro-bundler-config-yarn-workspaces",
-    "**/metro-bundler-config-yarn-workspaces/**"
-  ],
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "jest",
-    "gen:compdata": "ts-node-dev --respawn ./scripts/generateComponentData.ts"
-  },
-  "jest": {
-    "preset": "jest-expo-ts",
-    "setupFiles": [
-      "<rootDir>/jest/setup.js"
+  "workspaces": {
+    "packages": [
+      "packages/*"
     ],
-    "collectCoverage": true
-  },
-  "dependencies": {
-    "concurrently": "^3.5.1",
-    "expo": "^27.0.1",
-    "native-base": "^2.7.0",
-    "polished": "^1.9.3",
-    "react": "16.3.1",
-    "react-native": "~0.55.2",
-    "react-native-syntax-highlighter": "^2.0.0",
-    "react-navigation": "^2.6.2",
-    "react-syntax-highlighter": "^8.0.1",
-    "styled-components": "^3.3.3",
-    "ts-node-dev": "^1.0.0-pre.26"
+    "nohoist": [
+      "**/rimraf",
+      "**/rimraf/**",
+      "**/react-native",
+      "**/react-native/**",
+      "**/react-navigation",
+      "**/react-navigation/**",
+      "**/expo",
+      "**/expo/**",
+      "**/react-native-typescript-transformer",
+      "**/react-native-typescript-transformer/**",
+      "**/metro-bundler-config-yarn-workspaces",
+      "**/metro-bundler-config-yarn-workspaces/**"
+    ]
   }
 }
