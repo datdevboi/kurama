@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Text, View } from "react-native";
-import { Button } from "../../components/Button/Button";
+import { Button } from "kurama-ui";
 
 export class SmallButton extends React.Component<any> {
   public static displayName = "Small";
