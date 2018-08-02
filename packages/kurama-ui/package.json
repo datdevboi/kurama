@@ -10,7 +10,8 @@
     "styled-components": "^3.3.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rimraf lib && tsc"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
@@ -21,7 +22,8 @@
     "ts-jest": "^23.0.1",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
-    "typescript": "^2.9.1"
+    "typescript": "^2.9.1",
+    "rimraf": "2.6.2"
   },
   "jest": {
     "transform": {
