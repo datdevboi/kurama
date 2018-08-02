@@ -25,6 +25,9 @@
     "typescript": "^2.9.1",
     "rimraf": "2.6.2"
   },
+  "peerDependencies": {
+    "react-native": "^0.55.4"
+  },
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
