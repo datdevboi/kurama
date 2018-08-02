@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View } from "react-native";
 import CustomHeader from "../CustomHeader";
-import { Card } from "../components/Card/Card";
+import { Card } from "kurama-ui";
 
 export class CardExample extends React.Component<any> {
   public render() {
