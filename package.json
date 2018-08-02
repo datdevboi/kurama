@@ -9,6 +9,8 @@
       "**/rimraf/**",
       "**/react-native",
       "**/react-native/**",
+      "**/native-base",
+      "**/native-base/**",
       "**/react-navigation",
       "**/react-navigation/**",
       "**/expo",
